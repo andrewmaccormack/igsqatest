@@ -153,4 +153,6 @@ Would send DELETE to /api/product/42? with body None and headers [('Content-Type
 
 * Sticking with what I know, use requests and pytest
 
+* **Just noticed price is a string in model and get, but a float in put/post**
+
  
