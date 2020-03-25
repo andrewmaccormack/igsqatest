@@ -153,9 +153,15 @@ Would send DELETE to /api/product/42? with body None and headers [('Content-Type
 
 * Sticking with what I know, use requests and pytest
 
-* **Just noticed price is a string in model and get, but a float in put/post**
+* **Just noticed price is a string in model and get, but a float in put/post, exactly how is conversion supposed to go?**
 
 * Automated GET for product and products, assumed that get products was good initial data and then compared with get product one by one and found that **name is duplicated for item 3 for products but not product** indicates something odd in internal datat structure perhaps?
 * Above might have been missed by manual/exploratory test
 
- * Added negative test cases for GET product, unexpected 405 result from a blank ID, but others OK. Anyway, 400 response is an assumption. 
+ * Added negative test cases for GET product, unexpected 405 result from a blank ID, but others OK. Anyway, 400 response is an assumption.
+ 
+ * **Creating with POST, no id returned in any way, so how do you know what new ID is?**
+ 
+ * Ideally, RESTful should return location URI to the POST, not just id
+ 
+ * **Handling the capitalisation (initial caps when passing in, lowercase coming out) is an unnecessary faff in automation**

@@ -1,14 +1,12 @@
 from common import api_url
-#from common import initial_data
 import requests
-
 import pytest
 
 def get_product(id):
     return requests.get(api_url + f"product/{id}")
 
 # Get initial data from products endpoint to compare with one-by-one
-from test_products import get_products
+from test_00_products import get_products
 compare_data=get_products().json()
 
 @pytest.mark.parametrize("test_input,expected", [(x["id"], x) for x in compare_data])
