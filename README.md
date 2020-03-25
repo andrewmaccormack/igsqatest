@@ -155,4 +155,7 @@ Would send DELETE to /api/product/42? with body None and headers [('Content-Type
 
 * **Just noticed price is a string in model and get, but a float in put/post**
 
- 
+* Automated GET for product and products, assumed that get products was good initial data and then compared with get product one by one and found that **name is duplicated for item 3 for products but not product** indicates something odd in internal datat structure perhaps?
+* Above might have been missed by manual/exploratory test
+
+ * Added negative test cases for GET product, unexpected 405 result from a blank ID, but others OK. Anyway, 400 response is an assumption. 
